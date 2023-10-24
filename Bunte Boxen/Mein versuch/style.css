@@ -1,0 +1,60 @@
+* {
+	box-sizing: border-box;
+}
+
+#wrapper {
+	width: 90%;
+	height: 100%;
+	margin: auto;
+}
+header {
+	width: 100%;
+	height: 20vh;
+}
+
+#logo {
+	width: 100%;
+	height: 100px;
+	background-color: red;
+	margin-bottom: 10px;
+}
+
+nav {
+	width: 100%;
+	height: 5vh;
+	background-color: blue;
+}
+
+main {
+	width: 1000px;
+	height: 500px;
+	display: inline-block;
+}
+
+aside {
+	height: 500px;
+	width: 220px;
+	background-color: red;
+	display: inline-block;
+}
+
+section {
+	width: 100%;
+	margin-bottom: 10px;
+	height: 100px;
+	background-color: yellow;
+	float: left;
+}
+
+#beitrag {
+	width: 100%;
+	height: 400px;
+	background-color: orange;
+	float: left;
+}
+
+footer {
+	width: 100%;
+	height: 100px;
+	background-color: rgb(195, 18, 106);
+}
