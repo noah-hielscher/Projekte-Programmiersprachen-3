@@ -24,3 +24,10 @@ p {
 	color: black;
 	font-size: 14px;
 }
+
+#kursiv {
+	font-style: italic;
+}
+#underline {
+	text-decoration: underline;
+}
