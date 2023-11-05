@@ -1,0 +1,133 @@
+#wrapper {
+	width: 580px;
+	height: 850px;
+	margin: auto;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(5, 1fr);
+	grid-template-areas:
+		"h2 above above above"
+		"img img img img"
+		"article article article article"
+		"article article article article"
+		"article article article article";
+	gap: 7px;
+	background-color: aliceblue;
+	border-radius: 20px;
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.692);
+	transform: scale(0.5);
+	border: 3px solid black;
+}
+
+h2 {
+	background-color: rgba(0, 81, 51, 1);
+	color: rgb(255, 255, 255);
+	grid-area: h2;
+	border: 3px solid black;
+	border-radius: 15px;
+	font-size: 85px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-transform: uppercase;
+}
+.description {
+	grid-area: above;
+	border: 3px solid black;
+	border-radius: 15px;
+	padding: 20px;
+}
+
+h3 {
+	font-size: 30px;
+	text-transform: uppercase;
+}
+h4 {
+	font-size: 20px;
+	text-transform: uppercase;
+}
+
+h5 {
+	font-size: 30px;
+	color: rgba(0, 81, 51, 1);
+}
+p {
+	font-size: 13px;
+}
+#image {
+	grid-area: img;
+	max-width: 100%;
+	height: auto;
+	border: 3px solid black;
+	border-radius: 15px;
+}
+
+article {
+	grid-area: article;
+}
+
+#wrapper2 {
+	width: 100%;
+	height: 100%;
+	margin: auto;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(3, 1fr);
+	grid-template-areas:
+		"eins zwei drei vier"
+		"fuenf sechs sieben acht"
+		"neun zehn elf zwoelf";
+	border: 2px solid black;
+	border-radius: 15px;
+}
+.icon {
+	max-width: 50px;
+	margin-left: 30px;
+}
+.card {
+	padding: 15px;
+	padding-top: 19px;
+	border: 2px solid black;
+}
+
+#eins {
+	grid-area: eins;
+
+	border-radius: 13px 0 0 0;
+}
+#zwei {
+	grid-area: zwei;
+}
+#drei {
+	grid-area: drei;
+}
+#vier {
+	grid-area: vier;
+	border-radius: 0 13px 0 0;
+}
+#fuenf {
+	grid-area: fuenf;
+}
+#sechs {
+	grid-area: sechs;
+}
+#sieben {
+	grid-area: sieben;
+}
+#acht {
+	grid-area: acht;
+}
+#neun {
+	grid-area: neun;
+	border-radius: 0 0 0 13px;
+}
+#zehn {
+	grid-area: zehn;
+}
+#elf {
+	grid-area: elf;
+}
+#zwoelf {
+	grid-area: zwoelf;
+	border-radius: 0 0 13px 0;
+}
