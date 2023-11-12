@@ -5,9 +5,20 @@ $(document).ready(function () {
 		//so viele wir in der json haben
 		const numberOfCards = jsonData.length;
 
+		//Input für die Karten
+		let inputCard = [
+			"years",
+			"speed",
+			"height",
+			"number_teeth",
+			"iq",
+			"number_eggs",
+		];
+		let inputCardName = ["years", "speed", "height", "teeth", "iq", "eggs"];
+
 		//Durchetarieren durch die Daztenbank
 		for (let i = 0; i < numberOfCards; i++) {
-			// Erstellen Sie ein neues Karten-Element mit der gewünschten Struktur
+			// Erstellen Sie ein neues Karten-Element mit der ge	wünschten Struktur
 			const card = $("<div id='wrapper'></div>");
 
 			//1. Daten werden eingefügt vom 1. Grid
@@ -26,6 +37,7 @@ $(document).ready(function () {
 			const article = $("<article id='wrapper2'></article>");
 
 			// 2. Daten werden eingefügt aus dem 2. Grid
+
 			for (let j = 1; j <= 12; j++) {
 				const section = $(
 					"<section class='card' id='karte-" + j + "'></section>"
@@ -37,13 +49,18 @@ $(document).ready(function () {
 					);
 					section.append(icon);
 				} else {
-					const h4Stature = $("<h4></h4>").text("Stature");
-					const h5Dimensions = $("<h5></h5>").text("83*33");
-
+					//Korrektur Index Zahlen
+					const inputIndex = Math.floor((j - 1) / 2);
+					const h4Stature = $("<h4></h4>").text(
+						inputCardName[inputIndex]
+					);
+					const dataWerte = jsonData[i][inputCard[inputIndex]];
+					const h5Dimensions = $("<h5></h5>").text(dataWerte);
 					section.append(h4Stature, h5Dimensions);
 				}
-
 				article.append(section);
+
+				//array oder so was welches bestimmt was als nächsten in den Kästchen  rein soll
 			}
 
 			// Elemente werden Karten un Container hinzugefügt
