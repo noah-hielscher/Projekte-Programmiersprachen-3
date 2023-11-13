@@ -16,9 +16,18 @@ $(document).ready(function () {
 		];
 		let inputCardName = ["years", "speed", "height", "teeth", "iq", "eggs"];
 
+		let inputIcon = [
+			"./img/years.png",
+			"./img/speed.png",
+			"./img/height.png",
+			"./img/teeth.png",
+			"./img/iq.png",
+			"./img/eggs.png",
+		];
+
 		//Durchetarieren durch die Daztenbank
 		for (let i = 0; i < numberOfCards; i++) {
-			// Erstellen Sie ein neues Karten-Element mit der ge	wünschten Struktur
+			// Erstellen Sie ein neues Karten-Element
 			const card = $("<div id='wrapper'></div>");
 
 			//1. Daten werden eingefügt vom 1. Grid
@@ -27,7 +36,9 @@ $(document).ready(function () {
 			const description = $("<div class='description'></div>");
 
 			const h3 = $("<h3></h3>").text(jsonData[i].name);
+
 			const h4 = $("<h4></h4>").text(jsonData[i].group);
+
 			const img = $(
 				"<img id='image' src='./img/image.jpg' alt='" +
 					jsonData[i].name +
@@ -44,23 +55,44 @@ $(document).ready(function () {
 				);
 
 				if (j % 2 === 0) {
+					const inputIndexIcon = Math.floor((j - 1) / 2);
 					const icon = $(
-						"<img class='icon' src='./img/icon.png' alt='Icon'>"
+						"<img class='icon' src='" +
+							inputIcon[inputIndexIcon] +
+							"' alt='Icon'></img>"
 					);
 					section.append(icon);
 				} else {
-					//Korrektur Index Zahlen
+					// Korrektur Index Zahlen
 					const inputIndex = Math.floor((j - 1) / 2);
 					const h4Stature = $("<h4></h4>").text(
 						inputCardName[inputIndex]
 					);
 					const dataWerte = jsonData[i][inputCard[inputIndex]];
 					const h5Dimensions = $("<h5></h5>").text(dataWerte);
-					section.append(h4Stature, h5Dimensions);
-				}
-				article.append(section);
 
+					// Erstelle eine Box mit der Klasse CardText und füge h4 und h5 hinzu
+					const cardTextBox = $("<div></div>")
+						.addClass("cardText")
+						.append(h4Stature, h5Dimensions);
+
+					// Füge die CardText-Box zu section hinzu
+					//wichtig für andern css Style
+					section.append(cardTextBox);
+				}
+
+				// Füge die abgerundeten Ecken für spezifische Karten hinzu
+				if (j === 1) {
+					section.addClass("topLeftRounded");
+				} else if (j === 4) {
+					section.addClass("topRightRounded");
+				} else if (j === 9) {
+					section.addClass("bottomLeftRounded");
+				} else if (j === 12) {
+					section.addClass("bottomRightRounded");
+				}
 				//array oder so was welches bestimmt was als nächsten in den Kästchen  rein soll
+				article.append(section);
 			}
 
 			// Elemente werden Karten un Container hinzugefügt
