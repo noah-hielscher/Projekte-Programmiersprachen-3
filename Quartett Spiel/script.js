@@ -25,6 +25,29 @@ $(document).ready(function () {
 			"./img/eggs.png",
 		];
 
+		colorVariants = [
+			"#f39ebd",
+			"#7fadbb",
+			"#8fbf9e",
+			"#e4df8e",
+			"#b587bf",
+			"#e18c54",
+			"#77c2c2",
+			"#e8c9a5",
+		];
+
+		//Objekt mit den Color Keys
+		const alphabetColors = {
+			A: colorVariants[0],
+			B: colorVariants[1],
+			C: colorVariants[2],
+			D: colorVariants[3],
+			E: colorVariants[4],
+			F: colorVariants[5],
+			G: colorVariants[6],
+			H: colorVariants[7],
+		};
+
 		//Durchetarieren durch die Daztenbank
 		for (let i = 0; i < numberOfCards; i++) {
 			// Erstellen Sie ein neues Karten-Element
@@ -32,23 +55,17 @@ $(document).ready(function () {
 
 			//1. Daten werden eingefügt vom 1. Grid
 			const h2 = $("<h2></h2>").text(jsonData[i].group_letter);
-
 			const description = $("<div class='description'></div>");
-
 			const h3 = $("<h3></h3>").text(jsonData[i].name);
-
 			const h4 = $("<h4></h4>").text(jsonData[i].group);
-
 			const img = $(
 				"<img id='image' src='./img/image.jpg' alt='" +
 					jsonData[i].name +
 					"'>"
 			);
-
 			const article = $("<article id='wrapper2'></article>");
 
 			// 2. Daten werden eingefügt aus dem 2. Grid
-
 			for (let j = 1; j <= 12; j++) {
 				const section = $(
 					"<section class='card' id='karte-" + j + "'></section>"
@@ -75,7 +92,6 @@ $(document).ready(function () {
 					const cardTextBox = $("<div></div>")
 						.addClass("cardText")
 						.append(h4Stature, h5Dimensions);
-
 					// Füge die CardText-Box zu section hinzu
 					//wichtig für andern css Style
 					section.append(cardTextBox);
@@ -91,7 +107,40 @@ $(document).ready(function () {
 				} else if (j === 12) {
 					section.addClass("bottomRightRounded");
 				}
-				//array oder so was welches bestimmt was als nächsten in den Kästchen  rein soll
+
+				//unterschiedliche Farben aus der colorVariants für die h2
+				// if (h2.text() === "A") {
+				// 	h2.css("background-color", colorVariants[0]);
+				// }
+				// if (h2.text() === "B") {
+				// 	h2.css("background-color", colorVariants[1]);
+				// }
+				// if (h2.text() === "C") {
+				// 	h2.css("background-color", colorVariants[2]);
+				// }
+				// if (h2.text() === "D") {
+				// 	h2.css("background-color", colorVariants[3]);
+				// }
+				// if (h2.text() === "E") {
+				// 	h2.css("background-color", colorVariants[4]);
+				// }
+				// if (h2.text() === "F") {
+				// 	h2.css("background-color", colorVariants[5]);
+				// }
+				// if (h2.text() === "G") {
+				// 	h2.css("background-color", colorVariants[6]);
+				// }
+				// if (h2.text() === "H") {
+				// 	h2.css("background-color", colorVariants[7]);
+				// }
+
+				//Variable für h2 Input
+				const h2Text = h2.text();
+
+				//Überprüft ob es existiert
+				if (alphabetColors[h2Text]) {
+					h2.css("background-color", alphabetColors[h2Text]);
+				}
 				article.append(section);
 			}
 
