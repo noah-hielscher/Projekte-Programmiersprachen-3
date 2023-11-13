@@ -11,12 +11,38 @@ body {
 	height: 100vh;
 }
 
-#container {
+#layout {
 	width: 100vw;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr 80fr;
+	grid-template-areas: "text" "container";
+}
+
+@media screen and (min-width: 1200px) {
+	#layout {
+		width: 100vw;
+		display: grid;
+		grid-template-columns: 1fr 4fr;
+		grid-template-rows: 1fr;
+		grid-template-areas: "text container";
+	}
+}
+
+#text {
+	grid-area: text;
+	margin-top: 42px;
+	margin-left: 25px;
+	margin-right: 25px;
+}
+
+#container {
+	/* width: 100vw; */
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
 	align-items: center;
+	grid-area: container;
 }
 
 main {

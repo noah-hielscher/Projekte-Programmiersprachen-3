@@ -108,32 +108,7 @@ $(document).ready(function () {
 					section.addClass("bottomRightRounded");
 				}
 
-				//unterschiedliche Farben aus der colorVariants für die h2
-				// if (h2.text() === "A") {
-				// 	h2.css("background-color", colorVariants[0]);
-				// }
-				// if (h2.text() === "B") {
-				// 	h2.css("background-color", colorVariants[1]);
-				// }
-				// if (h2.text() === "C") {
-				// 	h2.css("background-color", colorVariants[2]);
-				// }
-				// if (h2.text() === "D") {
-				// 	h2.css("background-color", colorVariants[3]);
-				// }
-				// if (h2.text() === "E") {
-				// 	h2.css("background-color", colorVariants[4]);
-				// }
-				// if (h2.text() === "F") {
-				// 	h2.css("background-color", colorVariants[5]);
-				// }
-				// if (h2.text() === "G") {
-				// 	h2.css("background-color", colorVariants[6]);
-				// }
-				// if (h2.text() === "H") {
-				// 	h2.css("background-color", colorVariants[7]);
-				// }
-
+				//Farben werden hinzugefügt
 				//Variable für h2 Input
 				const h2Text = h2.text();
 
