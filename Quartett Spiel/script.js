@@ -14,8 +14,10 @@ $(document).ready(function () {
 			"iq",
 			"number_eggs",
 		];
+
 		let inputCardName = ["years", "speed", "height", "teeth", "iq", "eggs"];
 
+		//Icons
 		let inputIcon = [
 			"./img/years.png",
 			"./img/speed.png",
@@ -25,6 +27,7 @@ $(document).ready(function () {
 			"./img/eggs.png",
 		];
 
+		//Farben
 		colorVariants = [
 			"#f39ebd",
 			"#7fadbb",
@@ -35,7 +38,6 @@ $(document).ready(function () {
 			"#77c2c2",
 			"#e8c9a5",
 		];
-
 		//Objekt mit den Color Keys
 		const alphabetColors = {
 			A: colorVariants[0],
@@ -93,7 +95,6 @@ $(document).ready(function () {
 						.addClass("cardText")
 						.append(h4Stature, h5Dimensions);
 					// Füge die CardText-Box zu section hinzu
-					//wichtig für andern css Style
 					section.append(cardTextBox);
 				}
 

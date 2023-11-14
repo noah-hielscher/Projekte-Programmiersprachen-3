@@ -41,7 +41,7 @@ h2 {
 	grid-area: h2;
 	border: 3px solid black;
 	border-radius: 15px;
-	font-size: 65px;
+	font-size: 5em;
 	line-height: 1;
 	display: flex;
 	justify-content: center;
@@ -56,20 +56,19 @@ h2 {
 }
 
 h3 {
-	font-size: 23px;
-	/* text-transform: uppercase; */
+	font-size: 1.45em;
 }
 h4 {
-	font-size: 16px;
+	font-size: 1em;
 	font-weight: 500;
 	text-transform: uppercase;
 	line-height: 1;
 }
 
 h5 {
-	font-size: 33px;
+	font-size: 2em;
 	color: rgba(0, 81, 51, 1);
-	line-height: 1.2;
+	line-height: 1.4;
 }
 p {
 	font-size: 13px;
@@ -110,6 +109,7 @@ article {
 	border: 2px solid black;
 }
 .cardText {
+	padding-top: 8px;
 	text-align: center;
 }
 
