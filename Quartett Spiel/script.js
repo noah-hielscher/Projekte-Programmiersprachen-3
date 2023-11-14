@@ -59,7 +59,7 @@ $(document).ready(function () {
 			const h2 = $("<h2></h2>").text(jsonData[i].group_letter);
 			const description = $("<div class='description'></div>");
 			const h3 = $("<h3></h3>").text(jsonData[i].name);
-			const h4 = $("<h4></h4>").text(jsonData[i].group);
+			const h5 = $("<h5></h5>").text(jsonData[i].group);
 			const img = $(
 				"<img id='image' src='./img/image.jpg' alt='" +
 					jsonData[i].name +
@@ -84,16 +84,16 @@ $(document).ready(function () {
 				} else {
 					// Korrektur Index Zahlen
 					const inputIndex = Math.floor((j - 1) / 2);
-					const h4Stature = $("<h4></h4>").text(
+					const h5Stature = $("<h5></h5>").text(
 						inputCardName[inputIndex]
 					);
 					const dataWerte = jsonData[i][inputCard[inputIndex]];
-					const h5Dimensions = $("<h5></h5>").text(dataWerte);
+					const h4Dimensions = $("<h4></h4>").text(dataWerte);
 
-					// Erstelle eine Box mit der Klasse CardText und füge h4 und h5 hinzu
+					// Erstelle eine Box mit der Klasse CardText und füge h5 und h4 hinzu
 					const cardTextBox = $("<div></div>")
 						.addClass("cardText")
-						.append(h4Stature, h5Dimensions);
+						.append(h5Stature, h4Dimensions);
 					// Füge die CardText-Box zu section hinzu
 					section.append(cardTextBox);
 				}
@@ -122,7 +122,7 @@ $(document).ready(function () {
 
 			// Elemente werden Karten un Container hinzugefügt
 			card.append(h2, description, img, article);
-			description.append(h3, h4);
+			description.append(h3, h5);
 			container.append(card);
 		}
 	});
