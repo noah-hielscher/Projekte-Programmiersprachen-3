@@ -50,14 +50,11 @@ $(document).ready(function () {
 			H: colorVariants[7],
 		};
 
-		// Annahme: Du möchtest Bilder aus diesem Ordner einfügen
-		const bilderOrdner = "./Dino-img"; // Passe dies entsprechend deinem Ordnerpfad an
-
 		//Durchetarieren durch die Daztenbank
 		for (let i = 0; i < numberOfCards; i++) {
 			const card = $("<div id='wrapper'></div>");
 			const groupLetter = jsonData[i]["group_letter"];
-			const cardNumber = jsonData[i]["card number"]; // Konvertiere die Kartennummer in einen String
+			const cardNumber = jsonData[i]["card number"];
 			const cardName = jsonData[i]["name"];
 			const cardNameImage =
 				groupLetter + cardNumber + "_" + cardName + ".png";
