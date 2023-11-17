@@ -50,21 +50,33 @@ $(document).ready(function () {
 			H: colorVariants[7],
 		};
 
+		// Annahme: Du möchtest Bilder aus diesem Ordner einfügen
+		const bilderOrdner = "./Dino-img"; // Passe dies entsprechend deinem Ordnerpfad an
+
 		//Durchetarieren durch die Daztenbank
 		for (let i = 0; i < numberOfCards; i++) {
-			// Erstellen Sie ein neues Karten-Element
 			const card = $("<div id='wrapper'></div>");
+			const groupLetter = jsonData[i]["group_letter"];
+			const cardNumber = jsonData[i]["card number"]; // Konvertiere die Kartennummer in einen String
+			const cardName = jsonData[i]["name"];
+			const cardNameImage =
+				groupLetter + cardNumber + "_" + cardName + ".png";
 
 			//1. Daten werden eingefügt vom 1. Grid
 			const h2 = $("<h2></h2>").text(jsonData[i].group_letter);
 			const description = $("<div class='description'></div>");
 			const h3 = $("<h3></h3>").text(jsonData[i].name);
 			const h5 = $("<h5></h5>").text(jsonData[i].group);
+
+			//Bilder hinzugefügt
 			const img = $(
-				"<img id='image' src='./img/image.jpg' alt='" +
+				"<img id='image' src='./Dino-img/" +
+					cardNameImage +
+					"' alt='" +
 					jsonData[i].name +
 					"'>"
 			);
+
 			const article = $("<article id='wrapper2'></article>");
 
 			// 2. Daten werden eingefügt aus dem 2. Grid
@@ -78,7 +90,10 @@ $(document).ready(function () {
 					const icon = $(
 						"<img class='icon' src='" +
 							inputIcon[inputIndexIcon] +
-							"' alt='Icon'></img>"
+							"' alt='" +
+							jsonData[i].name +
+							"Stats-icons" +
+							"'></img>"
 					);
 					section.append(icon);
 				} else {
