@@ -28,6 +28,10 @@ body {
 		grid-template-rows: 1fr;
 		grid-template-areas: "text container";
 	}
+	nav {
+		display: flex;
+		margin: 18px;
+	}
 }
 
 #text {
@@ -66,8 +70,9 @@ header {
 	height: 15vh;
 	display: flex;
 	align-items: center;
+	justify-content: space-between;
 	padding-left: 50px;
-	padding-right: 50px;
+
 	position: relative;
 	animation: slideDown 1.5s ease-in-out forwards;
 	transform: translateY(-100%);
@@ -114,8 +119,9 @@ h1 {
 }
 
 nav {
-	display: flex;
-	margin: 50px;
+	/* display: flex; */
+	margin: 18px;
+	line-height: height 25px;
 }
 
 .navi {
