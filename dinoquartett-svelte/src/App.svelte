@@ -1,5 +1,16 @@
 <script>
+	import Start from "./Start.svelte";
 	import Game from "./Game.svelte";
+
+	let showStart = true; // Zeige zuerst Startseite an
+
+function showStartPage() {
+    showStart = true;
+}
+
+function showGamePage() {
+    showStart = false;
+}
 </script>
 
 <header>
@@ -7,8 +18,9 @@
 				><img id="logo" src="./img/Logo.png" alt="Logo von Qartett" />
 			</logo>
 			<nav>
-				<h3 class="navi">Startseite</h3>
-				<h3 class="navi">Sortierung</h3>
+				
+				<h3 class="navi" on:click={showStartPage}>Startseite</h3>
+				<h3 class="navi" on:click={showGamePage}>Umgedreht</h3>
 			</nav>
 		</header>
 		<main>
@@ -33,9 +45,14 @@
 						erwachen.
 					</p>
 				</div>
-				<div id="game">
-					<Game />
-				</div>
+				{#if showStart}
+    				<Start />
+				{:else}
+    				<Game />
+				{/if}	
+				<!-- <div id="start">
+					<Start />
+				</div> -->
 			</div>
 		</main>
 		<footer>

@@ -1,7 +1,6 @@
 <script>
   // wir brauchen einen Prop zum erstellen einer Karte
   export let dino;
-
   //img Pfad
   const imgPfad = "../public/Dino-img/"+dino.group_letter + dino.card_number+ "_" + dino.name + ".png";
 
