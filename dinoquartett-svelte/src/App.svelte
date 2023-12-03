@@ -1,6 +1,5 @@
 <script>
-	import Card from "./Card.svelte";
-	import dinosaurs from "./dinosaurs_data.js";
+	import Game from "./Game.svelte";
 </script>
 
 <header>
@@ -34,10 +33,8 @@
 						erwachen.
 					</p>
 				</div>
-				<div id="container">
-					{#each dinosaurs as dinosaur}
-					<Card dino={dinosaur} />
-					{/each}
+				<div id="game">
+					<Game />
 				</div>
 			</div>
 		</main>
