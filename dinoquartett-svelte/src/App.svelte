@@ -44,6 +44,7 @@
 		<footer>
 			<p>Diese Webseite wurde erstellt von</p>
 			<img id="dino" src="./img/cursor-animat.gif" alt="Dino" />
+			<p>imprint | GTC</p>
 		</footer>
 
 <style>
