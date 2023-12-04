@@ -30,10 +30,9 @@
 
     //Hintergrundfarbe des Buchstabens
     const bgLetterColor = alphabetColors[dino.group_letter];
-
 </script>
 
-<div id="wrapper">
+<div class="wrapper">
   <h2 style="background-color: {bgLetterColor};">{dino.group_letter}</h2>
   <div class="description">
     <h3>{dino.name}</h3>
@@ -110,7 +109,7 @@
 	}
 }
 
-#wrapper {
+.wrapper {
 	width: 400px;
 	height: 650px;
 	margin: 50px auto;
@@ -130,13 +129,16 @@
 	opacity: 0;
 	animation: fadeIn 2s ease-in-out forwards;
 	transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+	transform-style: preserve-3d;
 }
 
-#wrapper:hover {
+.wrapper:hover {
 	transform: scale(1.05);
 	box-shadow: 0 0 15px rgba(0, 0, 0, 0.692);
 	animation: fadeIn 2s ease-in-out forwards;
 }
+
+
 
 h2 {
 	background-color: rgba(0, 81, 51, 1);
@@ -222,6 +224,7 @@ article {
 	padding-top: 8px;
 	text-align: center;
 }
+
 
 #eins {
 	grid-area: eins;

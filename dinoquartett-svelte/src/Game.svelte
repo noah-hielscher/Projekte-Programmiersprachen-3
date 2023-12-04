@@ -16,6 +16,4 @@
 <style>
 	#gameFeeld {
   }
-
- 
 </style>

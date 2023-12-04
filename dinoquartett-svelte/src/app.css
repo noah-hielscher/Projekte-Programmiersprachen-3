@@ -9,7 +9,7 @@ body {
 	justify-content: center;
 	align-items: center;
 	height: 100vh;
-	cursor: url(./img/cursor.png) 10 10, auto;
+	/* cursor: url(./img/cursor.png) 10 10, auto; */
 }
 
 #layout {

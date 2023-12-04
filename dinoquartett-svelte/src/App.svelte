@@ -18,7 +18,6 @@ function showGamePage() {
 				><img id="logo" src="./img/Logo.png" alt="Logo von Qartett" />
 			</logo>
 			<nav>
-				
 				<h3 class="navi" on:click={showStartPage}>Startseite</h3>
 				<h3 class="navi" on:click={showGamePage}>Umgedreht</h3>
 			</nav>
