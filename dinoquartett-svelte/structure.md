@@ -6,9 +6,9 @@
             >Cards (Der Gestaltung der Karten)
         >/Startseite
 
-        >Game (getriggert durch Menü Umgedreht)
-            >Cards (Der Gestaltung der Karten)
-        >/Game
+        >Slider (getriggert durch Menü Slider)
+            >Cards die gefiltert werden
+        >/Slider
 
     >/APP Svelte
 

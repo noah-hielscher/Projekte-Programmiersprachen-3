@@ -1,6 +1,6 @@
 <script>
 	import Start from "./Start.svelte";
-	import Game from "./Game.svelte";
+	import Slider from "./Slider.svelte";
 
 	let showStart = true; // Zeige zuerst Startseite an
 
@@ -19,7 +19,7 @@ function showGamePage() {
 			</logo>
 			<nav>
 				<h3 class="navi" on:click={showStartPage}>Startseite</h3>
-				<h3 class="navi" on:click={showGamePage}>Umgedreht</h3>
+				<h3 class="navi" on:click={showGamePage}>Slider</h3>
 			</nav>
 		</header>
 		<main>
@@ -47,7 +47,7 @@ function showGamePage() {
 				{#if showStart}
     				<Start />
 				{:else}
-    				<Game />
+    				<Slider />
 				{/if}	
 				<!-- <div id="start">
 					<Start />
