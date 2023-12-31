@@ -147,28 +147,59 @@
 </div>
 
 <style>
+	/* Kartengestaltung */
 	.quartet-card {
-		width: 400px;
-		height: 650px;
-		position: relative;
+		margin: 50px auto;
+		border-radius: 20px;
+		animation: fadeIn 2s ease-in-out forwards;
+		transition:
+			transform 0.3s ease-in-out,
+			box-shadow 0.3s ease-in-out;
+		transform-style: preserve-3d;
+	}
+	.quartet-card:hover {
+		transform: scale(1.05);
+		box-shadow: 0 0 15px rgba(0, 0, 0, 0.692);
 	}
 
 	.front,
 	.back {
-		position: absolute;
 		backface-visibility: hidden;
-		width: 400px;
-		height: 650px;
 	}
 
 	.front {
+		transform-style: preserve-3d;
+		animation: rotateFront 1s ease-in-out forwards;
 	}
 
 	.back {
 		background-color: grey;
 		border-radius: 20px;
 		border: 3px solid black;
-		margin: 50px auto;
+		width: 400px;
+		height: 650px;
+		transform-style: preserve-3d;
+		animation: rotateBack 1s ease-in-out forwards;
+	}
+
+	/* Karten Animationen */
+
+	@keyframes rotateFront {
+		from {
+			transform: rotateY(180deg);
+		}
+		to {
+			transform: rotateY(0);
+		}
+	}
+
+	@keyframes rotateBack {
+		from {
+			transform: rotateY(180deg);
+		}
+		to {
+			transform: rotateY(0);
+		}
 	}
 
 	@keyframes fadeIn {
@@ -180,10 +211,11 @@
 		}
 	}
 
+	/* Karteninhalt */
+
 	.wrapper {
 		width: 400px;
 		height: 650px;
-		margin: 50px auto;
 		display: grid;
 		grid-template-columns: repeat(4, 1fr);
 		grid-template-rows: repeat(5, 1fr);
@@ -198,16 +230,6 @@
 		border-radius: 20px;
 		border: 3px solid black;
 		opacity: 0;
-		animation: fadeIn 2s ease-in-out forwards;
-		transition:
-			transform 0.3s ease-in-out,
-			box-shadow 0.3s ease-in-out;
-		transform-style: preserve-3d;
-	}
-
-	.wrapper:hover {
-		transform: scale(1.05);
-		box-shadow: 0 0 15px rgba(0, 0, 0, 0.692);
 		animation: fadeIn 2s ease-in-out forwards;
 	}
 
