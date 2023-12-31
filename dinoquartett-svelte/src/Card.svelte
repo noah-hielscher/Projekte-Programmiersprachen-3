@@ -1,6 +1,7 @@
 <script>
-	// wir brauchen einen Prop zum erstellen einer Karte
 	export let dino;
+	export let isFlipped = false;
+
 	//img Pfad
 	const imgPfad =
 		"../public/Dino-img/" +
@@ -36,9 +37,6 @@
 
 	//Hintergrundfarbe des Buchstabens
 	const bgLetterColor = alphabetColors[dino.group_letter];
-
-	//Flip
-	let isFlipped = false;
 
 	function flipCard() {
 		isFlipped = !isFlipped;
