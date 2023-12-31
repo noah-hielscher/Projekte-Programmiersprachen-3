@@ -9,21 +9,24 @@
 	let score = 0;
 	//Karte drehen
 	let isFlipped = true;
+	//aktueller Vergleich
+	let currentComparison = "";
+	// console.log(currentComparison);
 
-	//auswertung
-	function compareSpeed() {
-		const speed1 = randomDino1.speed;
-		const speed2 = randomDino2.speed;
-
-		if (speed1 > speed2) {
+	//Auswahl der Eigenschaften
+	function compareDinos(property) {
+		const setting1 = randomDino1[property];
+		const setting2 = randomDino2[property];
+		if (setting1 > setting2) {
 			score--; // Linkes Dino hat mehr
 			console.log("links");
-		} else if (speed2 > speed1) {
+		} else if (setting2 > setting1) {
 			score++; // Rechtes Dino hat mehr
 			console.log("rechts");
 		} else {
 			console.log("Gleichstand!");
 		}
+		currentComparison = property;
 	}
 
 	//neue Karten generieren
@@ -37,10 +40,19 @@
 <div id="gameField">
 	<Card dino={randomDino1} {isFlipped} />
 	<Card dino={randomDino2} />
-	<button on:click={compareSpeed}>speed</button>
 	<button on:click={generateNewCards}>weiter</button>
+	<button on:click={() => compareDinos("speed")}>speed</button>
+	<button on:click={() => compareDinos("height")}>height</button>
+	<button on:click={() => compareDinos("years")}>years</button>
+	<button on:click={() => compareDinos("iq")}>iq</button>
+	<button on:click={() => compareDinos("number_eggs")}>eggs</button>
+	<button on:click={() => compareDinos("number_teeth")}>teeth</button>
 	<p>Punktestand: {score}</p>
 </div>
+
+<!-- Buggs:
+1. Umdrehen
+2. nach einer Auswhal keine zweite -->
 
 <style>
 	#gameField {
