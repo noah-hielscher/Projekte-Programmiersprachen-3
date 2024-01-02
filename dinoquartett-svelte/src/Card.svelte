@@ -36,7 +36,7 @@
 	};
 
 	//Hintergrundfarbe des Buchstabens
-	const bgLetterColor = alphabetColors[dino.group_letter];
+	$: bgLetterColor = alphabetColors[dino.group_letter];
 </script>
 
 <div class="quartet-card" on:click>

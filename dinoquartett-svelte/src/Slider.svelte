@@ -2,26 +2,41 @@
 	import Card from "./Card.svelte";
 	import dinosaurs from "./dinosaurs_data.js";
 
+	// Standardstatistik und Wert
 	let wantedStats = "number_eggs";
 	let value = 0;
 
-	//maximaler Wert der Stats height
-	const maxwantedStats = Math.max(
+	// Verfügbare Statistiken aus dem Datensatz extrahieren
+	let availableStats = Object.keys(dinosaurs[0]);
+
+	// Höchster Wert für die ausgewählte Statistik
+	let maxwantedStats = Math.max(
 		...dinosaurs.map((dinosaur) => dinosaur[wantedStats])
 	);
 
+	// Gefilterte Dinosaurier basierend auf der gewählten Statistik und dem Wert
 	let filteredDinosaurs = dinosaurs;
 
-	//Funktion zum erneuten filtern => Updaten
+	// Funktion zum Aktualisieren der gefilterten Dinosaurier
 	function handleChange() {
 		filteredDinosaurs = dinosaurs.filter((dinosaur) => {
 			return dinosaur[wantedStats] > value;
 		});
 	}
+
+	// Funktion zum Ändern der ausgewählten Statistik
+	function changeStat(event) {
+		wantedStats = event.target.value; // Ändern der gewählten Statistik
+		maxwantedStats = Math.max(
+			...dinosaurs.map((dinosaur) => dinosaur[wantedStats])
+		); // Neu berechnen des maximalen Wertes für die ausgewählte Statistik
+		handleChange(); // Aktualisieren der gefilterten Dinosaurier basierend auf der neuen Statistik
+	}
 </script>
 
 <div class="viewSlider">
 	<div class="slidecontainer">
+		<!-- Slider für den Wert der ausgewählten Statistik -->
 		<input
 			type="range"
 			min="1"
@@ -31,11 +46,22 @@
 			id="myRange"
 			on:change={handleChange}
 		/>
+		<label for="statSelect">Wähle eine Statistik:</label>
+		<!-- Dropdown-Menü für die Auswahl der Statistik -->
+		<select id="statSelect" bind:value={wantedStats} on:change={changeStat}>
+			{#each availableStats as stat}
+				<option value={stat}>{stat}</option>
+			{/each}
+		</select>
+
+		<!-- Anzeige der ausgewählten Statistik und des Werts -->
 		<p>{wantedStats} min: <span id="demo">{value}</span></p>
+		<!-- Anzeige der Anzahl der gefilterten Dinosaurier -->
 		<p>Gefunden: {filteredDinosaurs.length}</p>
 	</div>
 
 	<div id="gameField">
+		<!-- Anzeige der gefilterten Dinosaurier als Karten -->
 		{#if !filteredDinosaurs.length}
 			<p>Keine Dinos gefunden</p>
 		{:else}
