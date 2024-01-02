@@ -37,13 +37,9 @@
 
 	//Hintergrundfarbe des Buchstabens
 	const bgLetterColor = alphabetColors[dino.group_letter];
-
-	function flipCard() {
-		isFlipped = !isFlipped;
-	}
 </script>
 
-<div class="quartet-card" on:click={flipCard}>
+<div class="quartet-card" on:click>
 	{#if !isFlipped}
 		<!-- Vorderseite -->
 		<div class="front">

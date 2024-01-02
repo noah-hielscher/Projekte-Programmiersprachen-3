@@ -15,6 +15,15 @@
 	let currentComparison = "";
 	let propertySelected = false; // Flag, um zu überprüfen, ob eine Eigenschaft ausgewählt wurde
 
+	//Flip Zustand Karte
+	let canFlipCard = false; // Zustand, der überprüft, ob eine IconButton ausgewählt wurde
+
+	function flipCard() {
+		if (canFlipCard) {
+			isFlipped = !isFlipped;
+		}
+	}
+
 	//Auswahl der Eigenschaften
 	function compareDinos(property) {
 		if (!propertySelected) {
@@ -39,6 +48,8 @@
 					button.style.opacity = "0.5";
 				}
 			});
+			// Setze canFlipCard auf true
+			canFlipCard = true;
 		}
 	}
 
@@ -54,6 +65,13 @@
 			button.disabled = false;
 			button.style.opacity = "1";
 		});
+		// Setze canFlipCard auf false,
+		canFlipCard = false;
+	}
+
+	// Funktion, die aufgerufen wird, wenn auf eine Karte geklickt wird
+	function handleCardClick() {
+		flipCard(); // Karten umdrehen, wenn auf eine Karte geklickt wird
 	}
 
 	// Array zur Speicherung der DOM-Elemente für die Buttons
@@ -66,8 +84,8 @@
 </script>
 
 <div id="gameField">
-	<Card dino={randomDino1} {isFlipped} />
-	<Card dino={randomDino2} />
+	<Card dino={randomDino1} {isFlipped} on:click={handleCardClick} />
+	<Card dino={randomDino2} on:click={handleCardClick} />
 	<button on:click={generateNewCards}>weiter</button>
 
 	<button
