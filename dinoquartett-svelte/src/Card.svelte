@@ -3,7 +3,7 @@
 	export let isFlipped = false;
 
 	//img Pfad
-	const imgPfad =
+	$: imgPfad =
 		"../public/Dino-img/" +
 		dino.group_letter +
 		dino.card_number +
