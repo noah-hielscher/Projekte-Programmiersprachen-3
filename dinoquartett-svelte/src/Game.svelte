@@ -1,4 +1,6 @@
 <script>
+	import { onMount } from "svelte";
+
 	import Card from "./Card.svelte";
 	import dinosaurs from "./dinosaurs_data.js";
 
@@ -11,22 +13,33 @@
 	let isFlipped = true;
 	//aktueller Vergleich
 	let currentComparison = "";
-	// console.log(currentComparison);
+	let propertySelected = false; // Flag, um zu überprüfen, ob eine Eigenschaft ausgewählt wurde
 
 	//Auswahl der Eigenschaften
 	function compareDinos(property) {
-		const setting1 = randomDino1[property];
-		const setting2 = randomDino2[property];
-		if (setting1 > setting2) {
-			score--; // Linkes Dino hat mehr
-			console.log("links");
-		} else if (setting2 > setting1) {
-			score++; // Rechtes Dino hat mehr
-			console.log("rechts");
-		} else {
-			console.log("Gleichstand!");
+		if (!propertySelected) {
+			const setting1 = randomDino1[property];
+			const setting2 = randomDino2[property];
+			if (setting1 > setting2) {
+				score--;
+				console.log("links");
+			} else if (setting2 > setting1) {
+				score++;
+				console.log("rechts");
+			} else {
+				console.log("Gleichstand!");
+			}
+			currentComparison = property;
+			propertySelected = true;
+
+			// Deaktiviere andere Buttons
+			buttons.forEach((button) => {
+				if (button.dataset.property !== property) {
+					button.disabled = true;
+					button.style.opacity = "0.5";
+				}
+			});
 		}
-		currentComparison = property;
 	}
 
 	//neue Karten generieren
@@ -34,25 +47,79 @@
 		randomDino1 = dinosaurs[Math.floor(Math.random() * dinosaurs.length)];
 		randomDino2 = dinosaurs[Math.floor(Math.random() * dinosaurs.length)];
 		isFlipped = true;
+		propertySelected = false; // Setze die Auswahl zurück
+
+		// Setze alle Buttons zurück
+		buttons.forEach((button) => {
+			button.disabled = false;
+			button.style.opacity = "1";
+		});
 	}
+
+	// Array zur Speicherung der DOM-Elemente für die Buttons
+	let buttons = [];
+	//aufgerufen, nachdem die Komponente montiert wurde
+	onMount(() => {
+		// Selektiere alle Elemente mit der Klasse .iconButton und speichere sie im buttons-Array
+		buttons = Array.from(document.querySelectorAll(".iconButton"));
+	});
 </script>
 
 <div id="gameField">
 	<Card dino={randomDino1} {isFlipped} />
 	<Card dino={randomDino2} />
 	<button on:click={generateNewCards}>weiter</button>
-	<button on:click={() => compareDinos("speed")}>speed</button>
-	<button on:click={() => compareDinos("height")}>height</button>
-	<button on:click={() => compareDinos("years")}>years</button>
-	<button on:click={() => compareDinos("iq")}>iq</button>
-	<button on:click={() => compareDinos("number_eggs")}>eggs</button>
-	<button on:click={() => compareDinos("number_teeth")}>teeth</button>
+
+	<button
+		class="iconButton"
+		on:click={() => compareDinos("speed")}
+		data-property="speed"
+		bind:this={buttons[0]}
+	>
+		<img src="./public/img/speed.png" alt="Speed Icon" />
+	</button>
+	<button
+		class="iconButton"
+		on:click={() => compareDinos("height")}
+		data-property="height"
+		bind:this={buttons[1]}
+	>
+		<img src="./public/img/height.png" alt="height Icon" />
+	</button>
+	<button
+		class="iconButton"
+		on:click={() => compareDinos("years")}
+		data-property="years"
+		bind:this={buttons[2]}
+	>
+		<img src="./public/img/years.png" alt="years Icon" />
+	</button>
+	<button
+		class="iconButton"
+		on:click={() => compareDinos("iq")}
+		data-property="iq"
+		bind:this={buttons[3]}
+	>
+		<img src="./public/img/iq.png" alt="iq Icon" />
+	</button>
+	<button
+		class="iconButton"
+		on:click={() => compareDinos("number_eggs")}
+		data-property="number_eggs"
+		bind:this={buttons[4]}
+	>
+		<img src="./public/img/eggs.png" alt="number_eggs Icon" />
+	</button><button
+		class="iconButton"
+		on:click={() => compareDinos("number_teeth")}
+		data-property="number_teeth"
+		bind:this={buttons[5]}
+	>
+		<img src="./public/img/teeth.png" alt="number_teeth Icon" />
+	</button>
+
 	<p>Punktestand: {score}</p>
 </div>
-
-<!-- Buggs:
-1. Umdrehen
-2. nach einer Auswhal keine zweite -->
 
 <style>
 	#gameField {
@@ -61,5 +128,9 @@
 		justify-content: space-evenly;
 		align-items: center;
 		grid-area: container;
+	}
+	.iconButton {
+		background-color: transparent;
+		border: none;
 	}
 </style>
