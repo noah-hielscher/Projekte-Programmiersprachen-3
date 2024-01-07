@@ -1,0 +1,50 @@
+/* Typo.css */
+
+/* Schriftarten importieren */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap");
+
+/* Schriftfamilie setzen */
+body {
+	font-family: "Inter", sans-serif;
+}
+
+/* Überschriften */
+h1 {
+	font-size: 2em; /* Beispielgröße */
+	font-weight: bold;
+	/* Weitere Stile für h1 */
+}
+
+h2 {
+	font-size: 1.5em; /* Beispielgröße */
+	/* Weitere Stile für h2 */
+}
+
+h3 {
+	font-size: 1.17em; /* Beispielgröße */
+	/* Weitere Stile für h3 */
+}
+
+h4 {
+	font-size: 1em; /* Beispielgröße */
+	/* Weitere Stile für h4 */
+}
+
+/* Buttons */
+.button {
+	display: inline-block;
+	padding: 10px 20px;
+	background-color: #3498db; /* Beispiel-Hintergrundfarbe */
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	font-size: 16px;
+	/* Weitere Stile für Buttons */
+}
+
+/* Paragraphs */
+p {
+	font-size: 14px; /* Beispielgröße */
+	line-height: 1.5; /* Beispielzeilenhöhe */
+	/* Weitere Stile für Paragraphen */
+}

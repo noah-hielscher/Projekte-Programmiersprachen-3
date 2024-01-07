@@ -1,3 +1,7 @@
+<!-- Verwendung:  -->
+<!-- import Buttons from "./Buttons.svelte"; -->
+<!-- <Buttons buttonText="Game" href="#/game" /> -->
+
 <script>
 	export let buttonText = "Default Text";
 	export let href = "#"; // Prop für den Link
@@ -11,6 +15,7 @@
 </div>
 
 <style>
+	@import "../typo.css";
 	.Creator {
 		display: flex;
 		align-items: center;

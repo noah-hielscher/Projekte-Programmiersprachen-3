@@ -4,6 +4,8 @@
 	import Card from "./Card.svelte";
 	import dinosaurs from "./dinosaurs_data.js";
 
+	import Buttons from "./UI/Buttons.svelte";
+
 	//random Dino
 	let randomDino1 = dinosaurs[Math.floor(Math.random() * dinosaurs.length)];
 	let randomDino2 = dinosaurs[Math.floor(Math.random() * dinosaurs.length)];

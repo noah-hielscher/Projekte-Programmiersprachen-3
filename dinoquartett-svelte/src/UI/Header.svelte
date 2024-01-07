@@ -9,6 +9,7 @@
 		<Buttons buttonText="Startseite" href="#/" />
 		<Buttons buttonText="Slider" href="#/slider" />
 		<Buttons buttonText="Game" href="#/game" />
+		<Buttons buttonText="Wiki" href="#/wiki" />
 	</menu>
 	<div class="space"></div>
 	<div class="space"></div>

@@ -6,9 +6,10 @@
 </div>
 
 <style>
+	@import "../typo.css";
 	.card-container {
-		width: 200px;
-		height: 150px; /* Ändere die Höhe für die Darstellung */
+		width: 100%;
+		height: 100%; /* Ändere die Höhe für die Darstellung */
 		position: relative;
 		background: #334b4d;
 		border-radius: 20px;
@@ -20,9 +21,6 @@
 		left: 20px; /* Ändere die Positionierung entsprechend */
 		top: 20px; /* Ändere die Positionierung entsprechend */
 		color: white;
-		font-size: 16px; /* Ändere die Schriftgröße für die Darstellung */
-		font-family: Inter;
-		font-weight: 400;
 		word-wrap: break-word;
 		margin: 0; /* Setze den Margin auf 0, um Standardabstände zu entfernen */
 	}
@@ -32,9 +30,6 @@
 		left: 20px; /* Ändere die Positionierung entsprechend */
 		top: 50px; /* Ändere die Positionierung entsprechend */
 		color: #cbcbcb;
-		font-size: 12px; /* Ändere die Schriftgröße für die Darstellung */
-		font-family: Inter;
-		font-weight: 400;
 		word-wrap: break-word;
 		margin: 0; /* Setze den Margin auf 0, um Standardabstände zu entfernen */
 	}

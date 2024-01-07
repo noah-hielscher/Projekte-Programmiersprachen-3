@@ -4,13 +4,14 @@
 
 <main class="content">
 	<div class="headline">
-		<div class="Heading1">Dinosaurier</div>
+		<h1 class="Heading1">Dinosaurier</h1>
 		<Buttons buttonText="Noah Hielscher" href="" />
 	</div>
 	<div class="boxes"></div>
 </main>
 
 <style>
+	@import "./typo.css";
 	/*Content Layout*/
 	.content {
 		margin-left: 30px;
@@ -30,6 +31,6 @@
 		font-style: normal;
 		font-weight: 700;
 		line-height: normal;
-		margin-right: 350px; /* Abstand zwischen Heading1 und Creator */
+		margin-right: 450px; /* Abstand zwischen Heading1 und Creator */
 	}
 </style>
