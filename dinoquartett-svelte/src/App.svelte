@@ -1,7 +1,9 @@
 <script>
+	import Header from "./UI/Header.svelte";
 	import Start from "./Start.svelte";
 	import Slider from "./Slider.svelte";
 	import Game from "./Game.svelte";
+	import Intro from "./Intro.svelte";
 
 	import Router from "svelte-spa-router";
 
@@ -12,15 +14,8 @@
 	};
 </script>
 
-<header>
-	<logo><img id="logo" src="./img/Logo.png" alt="Logo von Qartett" /> </logo>
-	<nav></nav>
-	<nav>
-		<a href="#/">Startseite</a>
-		<a href="#/slider">Slider</a>
-		<a href="#/game">Game</a>
-	</nav>
-</header>
+<header><Header {routes} /></header>
+<div><Intro /></div>
 <main>
 	<div id="layout">
 		<div id="text">
