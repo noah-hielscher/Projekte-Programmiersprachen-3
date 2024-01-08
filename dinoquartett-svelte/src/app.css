@@ -3,8 +3,12 @@
 	margin: 0;
 }
 
+:root {
+	--background-color: rgb(255, 254, 254); /* Standardtextfarbe */
+}
+
 body {
-	background-color: rgb(255, 255, 255);
+	background-color: var(--background-color);
 	font-family: "Poppins", sans-serif;
 	justify-content: center;
 	align-items: center;

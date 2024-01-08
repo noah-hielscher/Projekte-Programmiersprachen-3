@@ -9,7 +9,6 @@
 
 <div class="Creator">
 	<button class="link-button">
-		<!-- <div class="creator-text">{buttonText}</div> -->
 		<a class="creator-text" {href}>{buttonText}</a>
 	</button>
 </div>
@@ -22,12 +21,13 @@
 	}
 
 	.creator-text {
-		color: #000;
-		font-family: Inter;
+		/* color: #000; */
+		/* font-family: Inter;
 		font-size: 14px;
 		font-style: normal;
 		font-weight: 300;
-		line-height: normal;
+		line-height: normal; */
+		/* color: black; */
 	}
 
 	.link-button {
@@ -37,7 +37,6 @@
 		border: none; /* Entfernen der Rahmen */
 		background-color: transparent; /* Transparenter Hintergrund */
 		color: #3498db; /* Blaue Textfarbe */
-
 		cursor: pointer;
 		transition: color 0.3s ease; /* Übergang für die Textfarbe */
 		position: relative;

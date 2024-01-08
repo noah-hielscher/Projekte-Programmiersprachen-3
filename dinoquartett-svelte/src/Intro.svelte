@@ -25,12 +25,7 @@
 	}
 	.Heading1 {
 		width: 200px;
-		color: #000;
-		font-family: Inter;
-		font-size: 91.048px;
-		font-style: normal;
-		font-weight: 700;
-		line-height: normal;
+		/* color: #000; */
 		margin-right: 450px; /* Abstand zwischen Heading1 und Creator */
 	}
 </style>

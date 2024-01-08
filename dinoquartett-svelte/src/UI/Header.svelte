@@ -1,5 +1,6 @@
 <script>
 	import Buttons from "./Buttons.svelte";
+	import ToggleButton from "./ToggleButton.svelte";
 	export let routes;
 </script>
 
@@ -14,7 +15,7 @@
 	<div class="space"></div>
 	<div class="space"></div>
 	<div class="mode">
-		<div class="switcher"></div>
+		<ToggleButton />
 	</div>
 </header>
 
@@ -70,12 +71,5 @@
 		justify-content: right;
 		align-items: center;
 		grid-area: mode;
-	}
-	.switcher {
-		width: 112.048px;
-		height: 46.035px;
-		flex-shrink: 0;
-		border-radius: 87px;
-		background: var(--Wireframe-1, #47409c);
 	}
 </style>

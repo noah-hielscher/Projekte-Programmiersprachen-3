@@ -1,22 +1,28 @@
 /* Typo.css */
 
+:root {
+	--text-color: #000000; /* Standardtextfarbe */
+}
+
 /* Schriftarten importieren */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap");
 
 /* Schriftfamilie setzen */
 body {
 	font-family: "Inter", sans-serif;
+	color: var(--text-color);
 }
 
 /* Überschriften */
 h1 {
-	font-size: 2em; /* Beispielgröße */
+	font-size: 5em; /* Beispielgröße */
 	font-weight: bold;
+	color: var(--text-color);
 	/* Weitere Stile für h1 */
 }
 
 h2 {
-	font-size: 1.5em; /* Beispielgröße */
+	font-size: 2em; /* Beispielgröße */
 	/* Weitere Stile für h2 */
 }
 
@@ -30,16 +36,23 @@ h4 {
 	/* Weitere Stile für h4 */
 }
 
+a {
+	font-size: 1em; /* Beispielgröße */
+	/* Weitere Stile für a */
+	color: var(--text-color);
+}
+
 /* Buttons */
 .button {
+	font-size: 2.17em;
 	display: inline-block;
 	padding: 10px 20px;
 	background-color: #3498db; /* Beispiel-Hintergrundfarbe */
-	color: #fff;
 	border: none;
 	border-radius: 5px;
 	font-size: 16px;
 	/* Weitere Stile für Buttons */
+	color: var(--text-color);
 }
 
 /* Paragraphs */
